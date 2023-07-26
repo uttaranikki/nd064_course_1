@@ -1,11 +1,35 @@
 ## Docker commands used to build the application 
 # TODO: insert the docker build command
-
+docker build -t techtrends .
 ## Docker commands used to run the application
 # TODO: insert the docker run command
+ docker run -d -p 3111:3111 techtrends
 
 ## Docker commands used to get the application logs
 # TODO: insert the docker logs command
 
 ## Logs from the container running the TechTrends application
+$ docker logs cea67bf63ea6fdf7c275ec944fb35e746c0250c87f12ca2c9a2a7cf0cbf7bbf6
+
+
 # TODO: paste logs from the Docker container 
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+172.17.0.1 - - [26/Jul/2023 10:53:11] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [26/Jul/2023 10:53:11] "GET /static/css/main.css HTTP/1.1" 200 -
+172.17.0.1 - - [26/Jul/2023 10:53:11] "GET /favicon.ico HTTP/1.1" 404 -
+172.17.0.1 - - [26/Jul/2023 11:00:28] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [26/Jul/2023 11:00:28] "GET /static/css/main.css HTTP/1.1" 200 -
+172.17.0.1 - - [26/Jul/2023 11:00:28] "GET /favicon.ico HTTP/1.1" 404 -
+172.17.0.1 - - [26/Jul/2023 11:17:29] "GET /1 HTTP/1.1" 200 -
+172.17.0.1 - - [26/Jul/2023 11:17:29] "GET /static/css/main.css HTTP/1.1" 304 -
+172.17.0.1 - - [26/Jul/2023 11:17:43] "GET /4 HTTP/1.1" 200 -
+172.17.0.1 - - [26/Jul/2023 11:17:43] "GET /static/css/main.css HTTP/1.1" 304 -
+172.17.0.1 - - [26/Jul/2023 11:17:55] "GET /6 HTTP/1.1" 200 -
+172.17.0.1 - - [26/Jul/2023 11:17:55] "GET /static/css/main.css HTTP/1.1" 304 -
