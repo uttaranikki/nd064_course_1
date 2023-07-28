@@ -50,9 +50,9 @@ jobs:
         if: github.event_name != 'pull_request'
         uses: docker/login-action@28218f9b04b4f3f62068d7b6ce6ca5b26e35336c
         with:
-          registry: ${{ registry.gitlab.com }}
-          username: ${{ secrets.uttara.nikki }}
-          password: ${{ secrets.dckr_pat_c0cjmQJRudWY7XMKzehC3IfovsI }}
+          registry: registry.gitlab.com 
+          username: secrets.uttara.nikki 
+          password: secrets.dckr_pat_c0cjmQJRudWY7XMKzehC3IfovsI 
 
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
