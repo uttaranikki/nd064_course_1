@@ -12,7 +12,7 @@ on:
 
 env:
   # Use docker.io for Docker Hub if empty
-  REGISTRY: registry.gitlab.com
+  REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
 
@@ -50,10 +50,17 @@ jobs:
         if: github.event_name != 'pull_request'
         uses: docker/login-action@28218f9b04b4f3f62068d7b6ce6ca5b26e35336c
         with:
-          registry: registry.gitlab.com 
-          username: secrets.uttara.nikki 
-          password: secrets.@Viju4Nikki
-
+          registry: ghcr.io 
+          username: ${{ github.actor }} 
+          password: ${{ secrets.@Viju4Nikki }}
+          
+        #Login to Docker Hub
+        name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.uttaranikki }}
+          password: ${{ secrets.dckr_pat_c0cjmQJRudWY7XMKzehC3IfovsI }}
+          
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
       - name: Extract Docker metadata
