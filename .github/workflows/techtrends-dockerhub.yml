@@ -52,7 +52,7 @@ jobs:
         with:
           registry: registry.gitlab.com 
           username: secrets.uttara.nikki 
-          password: secrets.dckr_pat_c0cjmQJRudWY7XMKzehC3IfovsI 
+          password: secrets.@Viju4Nikki
 
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
