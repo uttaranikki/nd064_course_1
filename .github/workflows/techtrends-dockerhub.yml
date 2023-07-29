@@ -76,7 +76,7 @@ jobs:
         id: build-and-push
         uses: docker/build-push-action@ac9327eae2b366085ac7f6a2d02df8aa8ead720a
         with:
-          context: https://github.com/udacity/nd064_course_1/tree/main/project
+          context: https://github.com/udacity/nd064_course_1/tree/main/project/techtrends
           file: ./Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: techtrends:latest
