@@ -17,6 +17,26 @@ def get_post(post_id):
                         (post_id,)).fetchone()
     connection.close()
     return post
+const express = require('express');
+const app = express();
+
+// ... other routes and configurations ...
+
+// Health check endpoint
+app.get('/healthz', (req, res) => {
+  const response = {
+    status: 'OK - healthy'
+  };
+  res.status(200).json(response);
+});
+
+// ... other routes and configurations ...
+
+// Start the server
+const port = 3000; // Change this to your desired port number
+app.listen(port, () => {
+  console.log(`TechTrends app listening on port ${port}`);
+});
 
 # Define the Flask application
 app = Flask(__name__)
