@@ -1,8 +1,8 @@
 FROM python:3.8
 LABEL maintainer="Uttara Agarwal"
 
-COPY . /app
-WORKDIR /app
+COPY . /project
+WORKDIR /project
 RUN pip install -r requirements.txt
 
 RUN python init_db.py
