@@ -46,5 +46,5 @@ jobs:
           context: ./project/techtrends
           platforms: linux/amd64
           push: true
-          tags: uttaranikki/techtrends/techtrends:latest
+          tags: uttaranikki/techtrends:latest
           
