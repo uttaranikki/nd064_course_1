@@ -1,21 +1,37 @@
 namespace:
-  name: staging 
+  name: staging
  
 service:
-  port: 8111
+  port: 4111
+  targetPort: 3111
+  protocol: TCP 
   type: ClusterIP
 
 image:
-  repository: nd064_course_1 
-  tag: 1.18.0
+  repository: techtrends 
+  tag: latest
   pullPolicy: IfNotPresent
 
 replicaCount: 1
 
-resources:
-  requests:
-    cpu: 50m
-    memory: 128Mi
-
-configmap:
-  data: "version: 1.18.0"
+    spec:
+      containers:
+      - image: techtrends:latest
+        name: techtrends
+        ports:
+        - containerPort: 3111
+          protocol: TCP
+        livenessProbe:
+           httpGet:
+             path: /healthz
+             port: 3111
+        readinessProbe:
+           httpGet:
+             path: /healthz
+             port: 3111
+        resources:
+          requests:
+            cpu: 250m
+            memory: 64Mi
+          limits:
+            memory: 128Mi
