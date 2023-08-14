@@ -1,10 +1,8 @@
 namespace:
-  name: sandbox
+  name: prod
  
 service:
   port: 4111
-  targetPort: 3111
-  protocol: TCP 
   type: ClusterIP
 
 image:
@@ -14,24 +12,10 @@ image:
 
 replicaCount: 1
 
-    spec:
-      containers:
-      - image: techtrends:latest
-        name: techtrends
-        ports:
-        - containerPort: 3111
-          protocol: TCP
-        livenessProbe:
-           httpGet:
-             path: /healthz
-             port: 3111
-        readinessProbe:
-           httpGet:
-             path: /healthz
-             port: 3111
-        resources:
-          requests:
-            cpu: 250m
-            memory: 64Mi
-          limits:
-            memory: 128Mi
+resources:
+  requests:
+    cpu: 70m
+    memory: 256Mi
+
+configmap:
+  data: "version: 1.17.0"
