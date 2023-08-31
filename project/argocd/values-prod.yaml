@@ -6,7 +6,7 @@ service:
   type: ClusterIP
 
 image:
-  repository: uttaranikki/techtrends 
+  repository: techtrends 
   tag: latest
   pullPolicy: IfNotPresent
 
